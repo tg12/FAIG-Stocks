@@ -29,16 +29,16 @@ price_compare = "bid"
 # QUAND_REF = "LSE/LLOY"
 # QUAND_REF = "LSE/BARC"
 
-quandl.ApiConfig.api_key = "***********************"
+quandl.ApiConfig.api_key = "**********************"
 #MORE INFORMATION HERE:
 #http://help.quandl.com/article/320-where-can-i-find-my-api-key
 
 ########################################################################################################################
-#REAL_OR_NO_REAL = 'https://demo-api.ig.com/gateway/deal'
-#API_ENDPOINT = "https://demo-api.ig.com/gateway/deal/session"
-#API_KEY = '**********************' 
-##API_KEY = '*****************************'
-#data = {"identifier":"******************","password": "*******************"}
+REAL_OR_NO_REAL = 'https://demo-api.ig.com/gateway/deal'
+API_ENDPOINT = "https://demo-api.ig.com/gateway/deal/session"
+API_KEY = '**********************' 
+#API_KEY = '**********************'
+data = {"identifier":"**********************","password": "**********************"}
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -46,10 +46,10 @@ quandl.ApiConfig.api_key = "***********************"
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
-REAL_OR_NO_REAL = 'https://api.ig.com/gateway/deal'
-API_ENDPOINT = "https://api.ig.com/gateway/deal/session"
-API_KEY = '************************'
-data = {"identifier":"*********************","password": "*********************"}
+# REAL_OR_NO_REAL = 'https://api.ig.com/gateway/deal'
+# API_ENDPOINT = "https://api.ig.com/gateway/deal/session"
+# API_KEY = '**********************'
+# data = {"identifier":"**********************","password": "**********************"}
 
 headers = {'Content-Type':'application/json; charset=utf-8',
         'Accept':'application/json; charset=utf-8',
@@ -105,7 +105,7 @@ auth_r = requests.put(base_url, data=json.dumps(data), headers=authenticated_hea
 #UNIT TEST FOR OTHER STUFF
 limitDistance_value = "4" #Initial Limit (Take Profit), Worked out later per trade
 orderType_value = "MARKET"
-size_value = "3"
+size_value = "1"
 expiry_value = "DFB"
 guaranteedStop_value = True
 currencyCode_value = "GBP"
@@ -372,6 +372,18 @@ for times_round_loop in range(1, 9999):
         if low_range > 10:
             print ("!!DEBUG!! WARNING - Take Profit over high value, Might take a while for this trade!!")
             
+        stopDistance_value = int(max_range) 
+        #NOTE Sometimes IG Index want a massive stop loss for Guaranteed, Either don't use Guaranteed or "sell at market" with Artificial Stop loss
+        #MUST NOTE :- IF THIS PRICE IS - i.e NOT HIT TARGET YET, CONVERSELY IF THIS PRICE IS POSITIVE IT IS ALREADY ABOVE PREDICTION!!!
+        limitDistance_value = int(low_range)
+        
+        #Fixing a weird bug, Where the prediction is 0. 
+        #Fixing a weird bug, Where the prediction is 0.
+        if int(limitDistance_value) == 0:
+            limitDistance_value = "2"
+        
+        print ("TRUE GUARANTEED STOP LOSS DISTANCE WILL BE SET AT : " + str(stopDistance_value))
+        print ("Price Difference Away (Point's) : " + str(price_diff))
      
         base_url = REAL_OR_NO_REAL + '/prices/'+ epic_id + '/DAY/1'
         # Price resolution (MINUTE, MINUTE_2, MINUTE_3, MINUTE_5, MINUTE_10, MINUTE_15, MINUTE_30, HOUR, HOUR_2, HOUR_3, HOUR_4, DAY, WEEK, MONTH)
@@ -393,52 +405,6 @@ for times_round_loop in range(1, 9999):
         # print(auth_r.reason)
         # print (auth_r.text)
         # print ("-----------------DEBUG-----------------")
-
-        for i in d['prices']:
-            low_price = i['lowPrice'][price_compare]
-            volume = i['lastTradedVolume']
-
-        #####################################################################
-        #########################PREDICTION CODE#############################
-        #########################PREDICTION CODE#############################
-        #########################PREDICTION CODE#############################
-        #########################PREDICTION CODE#############################
-        #########################PREDICTION CODE#############################
-        #####################################################################
-        
-        x = np.asarray(x)
-        y = np.asarray(y)
-        # Initialize the model then train it on the data
-        genius_regression_model = LinearRegression()
-        genius_regression_model.fit(x,y)
-        # Predict the corresponding value of Y for X
-        pred_ict = [low_price,volume]
-        pred_ict = np.asarray(pred_ict) #To Numpy Array, hacky but good!! 
-        pred_ict = pred_ict.reshape(1, -1)
-        price_prediction = genius_regression_model.predict(pred_ict)
-        print ("PRICE PREDICTION FOR PRICE " + epic_id + " IS : " + str(price_prediction))
-
-
-        score = genius_regression_model.score(x,y)
-        predictions = {'intercept': genius_regression_model.intercept_, 'coefficient': genius_regression_model.coef_,   'predicted_value': price_prediction, 'accuracy' : score}
-        print ("-----------------DEBUG-----------------")
-        print (score)
-        print (predictions)
-        print ("-----------------DEBUG-----------------")
-            
-        price_diff = current_price - price_prediction
-        limitDistance_value = int(low_range)
-        #Fixing a weird bug, Where the prediction is 0. 
-        #Fixing a weird bug, Where the prediction is 0.
-        if int(limitDistance_value) == 0:
-            limitDistance_value = "2"
-            
-        stopDistance_value = int(max_range) 
-        #NOTE Sometimes IG Index want a massive stop loss for Guaranteed, Either don't use Guaranteed or "sell at market" with Artificial Stop loss
-        #MUST NOTE :- IF THIS PRICE IS - i.e NOT HIT TARGET YET, CONVERSELY IF THIS PRICE IS POSITIVE IT IS ALREADY ABOVE PREDICTION!!!
-        
-        print ("TRUE GUARANTEED STOP LOSS DISTANCE WILL BE SET AT : " + str(stopDistance_value))
-        print ("Price Difference Away (Point's) : " + str(price_diff))
                    
         ################################################################
         #########################ORDER CODE#############################
@@ -545,8 +511,14 @@ for times_round_loop in range(1, 9999):
     #This gets triggered if IG want a daft amount in your account for the margin, More than you specified initially. This happens sometimes... deal with it! 
     #This is fine, Whilst it is a bit hacky basically start over again.
     #######################################################################################
-    if str(d['reason']) == "ATTACHED_ORDER_LEVEL_ERROR" or str(d['reason']) == "MINIMUM_ORDER_SIZE_ERROR" or str(d['reason']) == "INSUFFICIENT_FUNDS" or str(d['reason']) == "MARKET_OFFLINE" or str(d['reason']) == "MARKET_CLOSED_WITH_EDITS":
+    if str(d['reason']) == "ATTACHED_ORDER_LEVEL_ERROR" or str(d['reason']) == "MINIMUM_ORDER_SIZE_ERROR" or str(d['reason']) == "INSUFFICIENT_FUNDS" or str(d['reason']) == "MARKET_OFFLINE":
         print ("!!DEBUG!! Something went wrong, is the market even open? Have you got enough cash etc, Try again!!")
+        systime.sleep(2)
+        continue
+    
+    if str(d['reason']) == "MARKET_CLOSED_WITH_EDITS":
+        print ("Market Closed, Waiting Half an Hour")
+        systime.sleep(1800)
         continue
         
     previous_traded_epic_id = epic_id    
@@ -587,7 +559,8 @@ for times_round_loop in range(1, 9999):
     ##########################################
     try:
         #while PROFIT_OR_LOSS < float(limitDistance_value): 
-        while PROFIT_OR_LOSS < float(limitDistance_value * int(size_value)) - 1: #Take something from the market, Before Take Profit.
+        #while PROFIT_OR_LOSS < float(limitDistance_value * int(size_value)) - 1: #Take something from the market, Before Take Profit.
+        while PROFIT_OR_LOSS < 0:
             elapsed_time = round((time() - Start_loop_time), 1) 
             print ("******************************")
             print ("Order Time : " + str(humanize_time(elapsed_time)))
