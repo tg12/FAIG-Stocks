@@ -154,6 +154,7 @@ for times_round_loop in range(1, 9999):
     high_price_list = []
     close_price_list = []
     volume_list = []
+    random.shuffle(symbols)
     # Your input data, X and Y are lists (or Numpy Arrays)
     #THIS IS YOUR TRAINING DATA
     x = [] #This is Low Price, Volume
@@ -161,7 +162,6 @@ for times_round_loop in range(1, 9999):
     
  
     while not Price_Change_OK:
-        random.shuffle(symbols)
         symbol = random.choice(symbols)
         QUAND_REF = "LSE/" + str(symbol)
         epic_id = "KA.D." + str(symbol) + ".DAILY.IP"
@@ -200,8 +200,11 @@ for times_round_loop in range(1, 9999):
         bid_price = d['snapshot']['bid']
         ask_price = d['snapshot']['offer']
         #PUT SOME DEBUGGING HERE IF IT FAILS
-        spread = float(bid_price) - float(ask_price)
-        print ("spread : " + str(spread))
+        if bid_price is None or ask_price is None:
+            spread = 190
+        else:
+            spread = float(bid_price) - float(ask_price)
+            print ("spread : " + str(spread))
         ##################################################################################################################
         ##################################################################################################################
         #e.g Spread is -30, That is too big, In-fact way too big. Spread is -1.7, This is not too bad, We can trade on this reasonably well.
@@ -209,11 +212,11 @@ for times_round_loop in range(1, 9999):
         ##################################################################################################################
         ##################################################################################################################
         #if spread is less than -2, It's too big
-        if float(spread) < -1:
+        if float(spread) < -1.5:
          print ("!!DEBUG!! :- SPREAD NOT OK")
          Price_Change_OK = False
          systime.sleep(2)
-        elif float(spread) > -1:
+        elif float(spread) > -1.5:
          Price_Change_OK = True
 
 
@@ -306,8 +309,11 @@ for times_round_loop in range(1, 9999):
         # print (auth_r.text)
         # print ("-----------------DEBUG-----------------")
         current_price = d['snapshot']['bid']
-        price_diff = current_price - price_prediction
-        print ("Price Difference Away (Point's) : " + str(price_diff))
+        if current_price is None:
+            price_diff = 9999
+        else:
+            price_diff = current_price - price_prediction
+            print ("Price Difference Away (Point's) : " + str(price_diff))
         ##############################################################
         ##############################################################
         ##############################################################
@@ -609,6 +615,15 @@ for times_round_loop in range(1, 9999):
         #while PROFIT_OR_LOSS < float(limitDistance_value): 
         #while PROFIT_OR_LOSS < float(limitDistance_value * int(size_value)) - 1: #Take something from the market, Before Take Profit.
         while PROFIT_OR_LOSS < 6:
+            now_time = datetime.datetime.now().time()
+            start = datetime.time(16, 00)
+            end = datetime.time(8, 00)
+            if now_time >= start or now_time <= end:
+                print ("yes, within the interval")
+                print ("Market Closed, Waiting......")
+                systime.sleep(1800)
+            else:
+                print('Market Open!!')
             elapsed_time = round((time() - Start_loop_time), 1) 
             print ("******************************")
             print ("Order Time : " + str(humanize_time(elapsed_time)))
