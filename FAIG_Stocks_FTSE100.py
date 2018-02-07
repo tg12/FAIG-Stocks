@@ -29,16 +29,16 @@ price_compare = "bid"
 # QUAND_REF = "LSE/LLOY"
 # QUAND_REF = "LSE/BARC"
 
-quandl.ApiConfig.api_key = "**********************"
+quandl.ApiConfig.api_key = "*****************"
 #MORE INFORMATION HERE:
 #http://help.quandl.com/article/320-where-can-i-find-my-api-key
 
 ########################################################################################################################
 REAL_OR_NO_REAL = 'https://demo-api.ig.com/gateway/deal'
 API_ENDPOINT = "https://demo-api.ig.com/gateway/deal/session"
-API_KEY = '**********************' 
-#API_KEY = '**********************'
-data = {"identifier":"**********************","password": "**********************"}
+API_KEY = '*****************' 
+#API_KEY = '*****************'
+data = {"identifier":"*****************","password": "*****************"}
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -48,8 +48,8 @@ data = {"identifier":"**********************","password": "*********************
 ########################################################################################################################
 # REAL_OR_NO_REAL = 'https://api.ig.com/gateway/deal'
 # API_ENDPOINT = "https://api.ig.com/gateway/deal/session"
-# API_KEY = '**********************'
-# data = {"identifier":"**********************","password": "**********************"}
+# API_KEY = '*****************'
+# data = {"identifier":"*****************","password": "*****************"}
 
 headers = {'Content-Type':'application/json; charset=utf-8',
         'Accept':'application/json; charset=utf-8',
@@ -112,9 +112,12 @@ currencyCode_value = "GBP"
 forceOpen_value = True
 stopDistance_value = "20" #Initial Stop loss, Worked out later per trade
 
-epic_ids = ['KA.D.AAL.DAILY.IP', 'KA.D.ABF.DAILY.IP', 'KA.D.ADMLN.DAILY.IP', 'AB.D.LNKAU.DAILY.IP', 'KA.D.AGK.DAILY.IP', 'KA.D.ANTO.DAILY.IP', 'KA.D.ARM.DAILY.IP', 'KC.D.KAYLN.DAILY.IP', 'KA.D.ASHM.DAILY.IP', 'KA.D.AGOLLN.DAILY.IP', 'KA.D.AGOULN.DAILY.IP', 'KA.D.AV.DAILY.IP', 'KA.D.AZN.DAILY.IP', 'KA.D.BA.DAILY.IP', 'KA.D.RBS.DAILY.IP', 'KA.D.LLOY.DAILY.IP', 'KA.D.BAY.DAILY.IP', 'KA.D.BAG.DAILY.IP', 'KA.D.BARC.DAILY.IP', 'KA.D.ZHYGLN.DAILY.IP', 'KA.D.GLTLLN.DAILY.IP', 'KA.D.TRSYLN.DAILY.IP', 'KA.D.USTYLN.DAILY.IP', 'KA.D.UBTPLN.DAILY.IP', 'KA.D.SBEGLN.DAILY.IP', 'KA.D.BATS.DAILY.IP', 'KA.D.BGEO.DAILY.IP', 'KA.D.BLND.DAILY.IP', 'KA.D.BLT.DAILY.IP', 'KA.D.BNZL.DAILY.IP', 'KA.D.BP.DAILY.IP', 'KA.D.XX300021E.DAILY.IP', 'KA.D.BRBY.DAILY.IP', 'KA.D.BSY.DAILY.IP', 'KA.D.BLZ.DAILY.IP', 'KA.D.BA.DAILY.IP', 'KA.D.BT.DAILY.IP', 'KA.D.BGC.DAILY.IP', 'KA.D.CCLLN.DAILY.IP', 'KA.D.CNA.DAILY.IP', 'KA.D.CPG.DAILY.IP', 'KA.D.CPI.DAILY.IP', 'KA.D.CRDA.DAILY.IP', 'KA.D.CRHLN.DAILY.IP', 'KA.D.DGE.DAILY.IP', 'KA.D.EMG.DAILY.IP', 'KA.D.EVRLN.DAILY.IP', 'KA.D.EXPN.DAILY.IP', 'KA.D.FRES.DAILY.IP', 'KA.D.GFS.DAILY.IP', 'KA.D.GKN.DAILY.IP', 'KA.D.GLEN.DAILY.IP', 'KA.D.GLVLN.DAILY.IP', 'KA.D.GSK.DAILY.IP', 'KA.D.HL.DAILY.IP', 'KA.D.XLVSLN.DAILY.IP', 'KA.D.HMSO.DAILY.IP', 'KA.D.HSBA.DAILY.IP', 'KA.D.BAY.DAILY.IP', 'KA.D.IAP.DAILY.IP', 'KA.D.IHG.DAILY.IP', 'KA.D.IMI.DAILY.IP', 'KA.D.SJPALN.DAILY.IP', 'KA.D.IJPALN.DAILY.IP', 'KA.D.EMIMLN.DAILY.IP', 'KA.D.UKSRLN.DAILY.IP', 'KA.D.EIMILN.DAILY.IP', 'KA.D.IMT.DAILY.IP', 'KA.D.IPRVLN.DAILY.IP', 'KA.D.IPRPLN.DAILY.IP', 'KA.D.ITRK.DAILY.IP', 'KA.D.ITV.DAILY.IP', 'KA.D.JMAT.DAILY.IP', 'KA.D.KAZ.DAILY.IP', 'KA.D.KGF.DAILY.IP', 'KA.D.LAND.DAILY.IP', 'KA.D.BLND.DAILY.IP', 'KA.D.LGEN.DAILY.IP', 'KA.D.LLOY.DAILY.IP', 'KA.D.JLT.DAILY.IP', 'KA.D.MGGT.DAILY.IP', 'KA.D.MKS.DAILY.IP', 'KA.D.MRW.DAILY.IP', 'KA.D.NGT.DAILY.IP', 'KA.D.NXT.DAILY.IP', 'KA.D.OML.DAILY.IP', 'KA.D.PFC.DAILY.IP', 'KA.D.POLY.DAILY.IP', 'KA.D.PLPLN.DAILY.IP', 'KA.D.BPI.DAILY.IP', 'KA.D.PRU.DAILY.IP', 'KA.D.PSON.DAILY.IP', 'KA.D.RB.DAILY.IP', 'KA.D.RBS.DAILY.IP', 'KA.D.RDSB.DAILY.IP', 'KA.D.REL.DAILY.IP', 'KA.D.REX.DAILY.IP', 'KA.D.RIO.DAILY.IP', 'KA.D.RR.DAILY.IP', 'KA.D.RRS.DAILY.IP', 'KA.D.RSA.DAILY.IP', 'KA.D.AV.DAILY.IP', 'KA.D.SAB.DAILY.IP', 'KA.D.SBRY.DAILY.IP', 'KA.D.SDR.DAILY.IP', 'KA.D.SDRC.DAILY.IP', 'KA.D.SGE.DAILY.IP', 'KA.D.SGEALN.DAILY.IP', 'KA.D.SHP.DAILY.IP', 'KA.D.SLLN.DAILY.IP', 'KA.D.SLET.DAILY.IP', 'KA.D.SMIN.DAILY.IP', 'KA.D.SN.DAILY.IP', 'KA.D.SNLDLN.DAILY.IP', 'KA.D.SRP.DAILY.IP', 'KA.D.SSE.DAILY.IP', 'KA.D.STAN.DAILY.IP', 'KA.D.CAY.DAILY.IP', 'KA.D.SVT.DAILY.IP', 'KA.D.TATE.DAILY.IP', 'KA.D.TLW.DAILY.IP', 'KA.D.TSCO.DAILY.IP', 'KA.D.ULVR.DAILY.IP', 'KA.D.UU.DAILY.IP', 'KA.D.VED.DAILY.IP', 'KA.D.VOD.DAILY.IP', 'KA.D.WEIR.DAILY.IP', 'KA.D.SMWH.DAILY.IP', 'KA.D.WPP.DAILY.IP', 'KA.D.WTB.DAILY.IP', 'KA.D.XAR.DAILY.IP']
+#epic_ids = ['KA.D.AAL.DAILY.IP', 'KA.D.ABF.DAILY.IP', 'KA.D.ADMLN.DAILY.IP', 'AB.D.LNKAU.DAILY.IP', 'KA.D.AGK.DAILY.IP', 'KA.D.ANTO.DAILY.IP', 'KA.D.ARM.DAILY.IP', 'KC.D.KAYLN.DAILY.IP', 'KA.D.ASHM.DAILY.IP', 'KA.D.AGOLLN.DAILY.IP', 'KA.D.AGOULN.DAILY.IP', 'KA.D.AV.DAILY.IP', 'KA.D.AZN.DAILY.IP', 'KA.D.BA.DAILY.IP', 'KA.D.RBS.DAILY.IP', 'KA.D.LLOY.DAILY.IP', 'KA.D.BAY.DAILY.IP', 'KA.D.BAG.DAILY.IP', 'KA.D.BARC.DAILY.IP', 'KA.D.ZHYGLN.DAILY.IP', 'KA.D.GLTLLN.DAILY.IP', 'KA.D.TRSYLN.DAILY.IP', 'KA.D.USTYLN.DAILY.IP', 'KA.D.UBTPLN.DAILY.IP', 'KA.D.SBEGLN.DAILY.IP', 'KA.D.BATS.DAILY.IP', 'KA.D.BGEO.DAILY.IP', 'KA.D.BLND.DAILY.IP', 'KA.D.BLT.DAILY.IP', 'KA.D.BNZL.DAILY.IP', 'KA.D.BP.DAILY.IP', 'KA.D.XX300021E.DAILY.IP', 'KA.D.BRBY.DAILY.IP', 'KA.D.BSY.DAILY.IP', 'KA.D.BLZ.DAILY.IP', 'KA.D.BA.DAILY.IP', 'KA.D.BT.DAILY.IP', 'KA.D.BGC.DAILY.IP', 'KA.D.CCLLN.DAILY.IP', 'KA.D.CNA.DAILY.IP', 'KA.D.CPG.DAILY.IP', 'KA.D.CPI.DAILY.IP', 'KA.D.CRDA.DAILY.IP', 'KA.D.CRHLN.DAILY.IP', 'KA.D.DGE.DAILY.IP', 'KA.D.EMG.DAILY.IP', 'KA.D.EVRLN.DAILY.IP', 'KA.D.EXPN.DAILY.IP', 'KA.D.FRES.DAILY.IP', 'KA.D.GFS.DAILY.IP', 'KA.D.GKN.DAILY.IP', 'KA.D.GLEN.DAILY.IP', 'KA.D.GLVLN.DAILY.IP', 'KA.D.GSK.DAILY.IP', 'KA.D.HL.DAILY.IP', 'KA.D.XLVSLN.DAILY.IP', 'KA.D.HMSO.DAILY.IP', 'KA.D.HSBA.DAILY.IP', 'KA.D.BAY.DAILY.IP', 'KA.D.IAP.DAILY.IP', 'KA.D.IHG.DAILY.IP', 'KA.D.IMI.DAILY.IP', 'KA.D.SJPALN.DAILY.IP', 'KA.D.IJPALN.DAILY.IP', 'KA.D.EMIMLN.DAILY.IP', 'KA.D.UKSRLN.DAILY.IP', 'KA.D.EIMILN.DAILY.IP', 'KA.D.IMT.DAILY.IP', 'KA.D.IPRVLN.DAILY.IP', 'KA.D.IPRPLN.DAILY.IP', 'KA.D.ITRK.DAILY.IP', 'KA.D.ITV.DAILY.IP', 'KA.D.JMAT.DAILY.IP', 'KA.D.KAZ.DAILY.IP', 'KA.D.KGF.DAILY.IP', 'KA.D.LAND.DAILY.IP', 'KA.D.BLND.DAILY.IP', 'KA.D.LGEN.DAILY.IP', 'KA.D.LLOY.DAILY.IP', 'KA.D.JLT.DAILY.IP', 'KA.D.MGGT.DAILY.IP', 'KA.D.MKS.DAILY.IP', 'KA.D.MRW.DAILY.IP', 'KA.D.NGT.DAILY.IP', 'KA.D.NXT.DAILY.IP', 'KA.D.OML.DAILY.IP', 'KA.D.PFC.DAILY.IP', 'KA.D.POLY.DAILY.IP', 'KA.D.PLPLN.DAILY.IP', 'KA.D.BPI.DAILY.IP', 'KA.D.PRU.DAILY.IP', 'KA.D.PSON.DAILY.IP', 'KA.D.RB.DAILY.IP', 'KA.D.RBS.DAILY.IP', 'KA.D.RDSB.DAILY.IP', 'KA.D.REL.DAILY.IP', 'KA.D.REX.DAILY.IP', 'KA.D.RIO.DAILY.IP', 'KA.D.RR.DAILY.IP', 'KA.D.RRS.DAILY.IP', 'KA.D.RSA.DAILY.IP', 'KA.D.AV.DAILY.IP', 'KA.D.SAB.DAILY.IP', 'KA.D.SBRY.DAILY.IP', 'KA.D.SDR.DAILY.IP', 'KA.D.SDRC.DAILY.IP', 'KA.D.SGE.DAILY.IP', 'KA.D.SGEALN.DAILY.IP', 'KA.D.SHP.DAILY.IP', 'KA.D.SLLN.DAILY.IP', 'KA.D.SLET.DAILY.IP', 'KA.D.SMIN.DAILY.IP', 'KA.D.SN.DAILY.IP', 'KA.D.SNLDLN.DAILY.IP', 'KA.D.SRP.DAILY.IP', 'KA.D.SSE.DAILY.IP', 'KA.D.STAN.DAILY.IP', 'KA.D.CAY.DAILY.IP', 'KA.D.SVT.DAILY.IP', 'KA.D.TATE.DAILY.IP', 'KA.D.TLW.DAILY.IP', 'KA.D.TSCO.DAILY.IP', 'KA.D.ULVR.DAILY.IP', 'KA.D.UU.DAILY.IP', 'KA.D.VED.DAILY.IP', 'KA.D.VOD.DAILY.IP', 'KA.D.WEIR.DAILY.IP', 'KA.D.SMWH.DAILY.IP', 'KA.D.WPP.DAILY.IP', 'KA.D.WTB.DAILY.IP', 'KA.D.XAR.DAILY.IP']
+#symbols = ['AAL', 'ABF', 'ADM', 'ADN', 'AGK', 'AMEC', 'ANTO', 'ARM', 'ASHM', 'AV', 'AZN', 'BA', 'BARC', 'BATS', 'BG', 'BLND', 'BLT', 'BNZL', 'BP', 'BRBY', 'BSY', 'BT-A', 'CCL', 'CNA', 'CPG', 'CPI', 'CRDA', 'CRH', 'CSCG', 'DGE', 'EMG', 'ENRC', 'EVR', 'EXPN', 'FRES', 'GFS', 'GKN', 'GLEN', 'GSK', 'HL', 'HMSO', 'HSBA', 'IAG', 'IAP', 'IHG', 'IMI', 'IMT', 'IPR', 'ITRK', 'ITV', 'JMAT', 'KAZ', 'KGF', 'LAND', 'LGEN', 'LLOY', 'MGGT', 'MKS', 'MRW', 'NG', 'NXT', 'OML', 'PFC', 'POLY', 'PRU', 'PSON', 'RB', 'RBS', 'RDSB', 'REL', 'REX', 'RIO', 'RR', 'RRS', 'RSA', 'RSL', 'SAB', 'SBRY', 'SDR', 'SDRC', 'SGE', 'SHP', 'SL', 'SMIN', 'SN', 'SRP', 'SSE', 'STAN', 'SVT', 'TATE', 'TLW', 'TSCO', 'ULVR', 'UU', 'VED', 'VOD', 'WEIR', 'WOS', 'WPP', 'WTB', 'XTA']
 
-symbols = ['AAL', 'ABF', 'ADM', 'ADN', 'AGK', 'AMEC', 'ANTO', 'ARM', 'ASHM', 'AV', 'AZN', 'BA', 'BARC', 'BATS', 'BG', 'BLND', 'BLT', 'BNZL', 'BP', 'BRBY', 'BSY', 'BT-A', 'CCL', 'CNA', 'CPG', 'CPI', 'CRDA', 'CRH', 'CSCG', 'DGE', 'EMG', 'ENRC', 'EVR', 'EXPN', 'FRES', 'GFS', 'GKN', 'GLEN', 'GSK', 'HL', 'HMSO', 'HSBA', 'IAG', 'IAP', 'IHG', 'IMI', 'IMT', 'IPR', 'ITRK', 'ITV', 'JMAT', 'KAZ', 'KGF', 'LAND', 'LGEN', 'LLOY', 'MGGT', 'MKS', 'MRW', 'NG', 'NXT', 'OML', 'PFC', 'POLY', 'PRU', 'PSON', 'RB', 'RBS', 'RDSB', 'REL', 'REX', 'RIO', 'RR', 'RRS', 'RSA', 'RSL', 'SAB', 'SBRY', 'SDR', 'SDRC', 'SGE', 'SHP', 'SL', 'SMIN', 'SN', 'SRP', 'SSE', 'STAN', 'SVT', 'TATE', 'TLW', 'TSCO', 'ULVR', 'UU', 'VED', 'VOD', 'WEIR', 'WOS', 'WPP', 'WTB', 'XTA']
+
+epic_ids = ['KA.D.SCSLN.DAILY.IP', 'KA.D.RMGLN.DAILY.IP', 'KA.D.NAHLN.DAILY.IP', 'KA.D.CMS.DAILY.IP', 'KA.D.BKGLN.DAILY.IP', 'KA.D.LSL.DAILY.IP', 'KA.D.PSN.DAILY.IP', 'KA.D.RM.DAILY.IP', 'KA.D.RMGLN.DAILY.IP', 'KA.D.TWLN.DAILY.IP', 'KA.D.FXPO.DAILY.IP', 'KA.D.CLIG.DAILY.IP', 'KA.D.HAT.DAILY.IP', 'SA.D.BRKAUS.DAILY.IP', 'KA.D.NUM.DAILY.IP', 'KA.D.LWB.DAILY.IP', 'KA.D.RDW.DAILY.IP', 'KA.D.BMY.DAILY.IP', 'KA.D.RWA.DAILY.IP', 'KA.D.SPO.DAILY.IP', 'KA.D.JD.DAILY.IP', 'KA.D.WIZZLN.DAILY.IP', 'KA.D.AAL.DAILY.IP', 'KA.D.NXR.DAILY.IP', 'KA.D.COSTLN.DAILY.IP', 'KA.D.PLUSLN.DAILY.IP', 'KA.D.TEP.DAILY.IP', 'KA.D.BAY.DAILY.IP', 'KA.D.STHR.DAILY.IP', 'KA.D.NXT.DAILY.IP', 'KA.D.MUT.DAILY.IP', 'KA.D.MYI.DAILY.IP', 'KA.D.TATE.DAILY.IP', 'KA.D.STCKLN.DAILY.IP', 'KA.D.VLX.DAILY.IP', 'KA.D.PFC.DAILY.IP', 'KA.D.HRG.DAILY.IP', 'KA.D.EVRLN.DAILY.IP', 'KA.D.SDY.DAILY.IP', 'KA.D.IRET.DAILY.IP', 'KA.D.HEAD.DAILY.IP', 'KA.D.BLT.DAILY.IP', 'KA.D.CKN.DAILY.IP', 'KA.D.POLR.DAILY.IP', 'KA.D.KLR.DAILY.IP', 'KA.D.MPI.DAILY.IP', 'KA.D.RIO.DAILY.IP', 'KA.D.ASHM.DAILY.IP', 'KA.D.AGOLLN.DAILY.IP', 'KA.D.AGOULN.DAILY.IP', 'KA.D.VTC.DAILY.IP', 'KA.D.FORTLN.DAILY.IP', 'KA.D.BDEV.DAILY.IP', 'KA.D.REC.DAILY.IP', 'KA.D.RB.DAILY.IP', 'KA.D.FENR.DAILY.IP', 'KA.D.III.DAILY.IP', 'KA.D.IGLSLN.DAILY.IP', 'KA.D.IWDGLN.DAILY.IP', 'KA.D.BBEBLN.DAILY.IP', 'KA.D.AGBPLN.DAILY.IP', 'KA.D.IDP6LN.DAILY.IP', 'KA.D.ISP6LN.DAILY.IP', 'KA.D.RNK.DAILY.IP', 'KA.D.CCC.DAILY.IP', 'KA.D.SFR.DAILY.IP', 'KA.D.SFRBLN.DAILY.IP', 'KA.D.DTG.DAILY.IP', 'KA.D.JUP.DAILY.IP', 'KA.D.FSC.DAILY.IP', 'KA.D.JEO.DAILY.IP', 'KA.D.JPGLN.DAILY.IP', 'KA.D.CAMLLN.DAILY.IP', 'KA.D.HHR.DAILY.IP', 'KA.D.INDVLN.DAILY.IP', 'KA.D.SVS.DAILY.IP', 'KA.D.AVON.DAILY.IP', 'KA.D.MGNS.DAILY.IP', 'KA.D.GLEN.DAILY.IP', 'KA.D.GLE.DAILY.IP', 'KA.D.GLVLN.DAILY.IP', 'KA.D.BBA.DAILY.IP', 'KA.D.OML.DAILY.IP', 'KA.D.LIO.DAILY.IP', 'KA.D.FLOL.DAILY.IP', 'KA.D.TEFLN.DAILY.IP', 'KA.D.ALDM.DAILY.IP', 'KA.D.CKSN.DAILY.IP', 'KA.D.VOD.DAILY.IP']
+symbols = ['SCS', 'GLTR', 'GFM', 'MHPC', 'RMG', 'NAH', 'TECH', 'CMS', 'WINK', 'BKG', 'LSL', 'BILB', 'JPEL', 'PSN', 'SLP', 'RM.', 'TW.', 'FXPO', 'SND', 'CLIG', 'HAT', 'NUM', 'BON', 'NEXS', 'OCN', 'RDW', 'AFS', 'SIXH', 'BMY', 'RWA', 'SPO', 'WIZZ', 'GDP', 'AAL', 'IGG', 'NXR', 'TON', 'COST', 'PLUS', 'IAG', 'STHR', 'PMP', 'NXT', 'MUR', 'TATE', 'THAL', 'STCK', 'VLX', 'PFC', 'HRG', 'AMO', 'SOM', 'EVR', 'RFX', 'SDY', 'PCTN', 'HEAD', 'BLT', 'CKN', 'NTBR', 'DRV', 'POLR', 'KLR', 'PAGE', 'RIO', 'PRP', 'DWHT', 'ASHM', 'VTC', 'FORT', 'BDEV', 'REC', 'FENR', 'III', 'RNK', 'CCC', 'SFR', 'DTG', 'JUP', 'NWF', 'CAML', 'REDD', 'INDV', 'BILN', 'BQE', 'SVS', 'AVON', 'HYNS', 'MGNS', 'GLE', 'BBA', 'IBPO', 'OML', 'LIO', 'FLO', 'TEF', 'ALD', 'VSVS', 'VOD', 'VNET']
 
 
 #*******************************************************************
@@ -162,8 +165,8 @@ for times_round_loop in range(1, 9999):
         random.shuffle(symbols)
         symbol = random.choice(symbols)
         QUAND_REF = "LSE/" + str(symbol)
-        print (QUAND_REF)
         epic_id = "KA.D." + str(symbol) + ".DAILY.IP"
+        print (QUAND_REF)
         print (epic_id)
         if epic_id not in epic_ids:
             Price_Change_OK = False
@@ -314,22 +317,30 @@ for times_round_loop in range(1, 9999):
         auth_r = requests.get(base_url, headers=authenticated_headers)
         d = json.loads(auth_r.text)
         
-        # print ("-----------------DEBUG-----------------")
-        # print(auth_r.status_code)
-        # print(auth_r.reason)
-        # print (auth_r.text)
-        # print ("-----------------DEBUG-----------------")
+        print ("-----------------DEBUG-----------------")
+        print(auth_r.status_code)
+        print(auth_r.reason)
+        print (auth_r.text)
+        print ("-----------------DEBUG-----------------")
         
         for i in d['prices']:
             tmp_list = []
             high_price = i['highPrice'][price_compare]
             low_price = i['lowPrice'][price_compare]
+            #print(type(low_price))
+            #print (low_price)
             volume = i['lastTradedVolume']
             #---------------------------------
+            if low_price is None:
+                low_price = 0
             tmp_list.append(float(low_price))
+            if volume is None:
+                volume = 0
             tmp_list.append(float(volume))
             x.append(tmp_list)
             #x is Low Price and Volume
+            if high_price is None:
+                high_price = 0
             y.append(float(high_price))
             #y = High Prices
         
@@ -345,9 +356,21 @@ for times_round_loop in range(1, 9999):
             if first_time_round_loop == True:
                 #First time round loop cannot get previous
                 closePrice = i['closePrice'][price_compare]
-                closing_prices.append(closePrice)
                 high_price = i['highPrice'][price_compare]
                 low_price = i['lowPrice'][price_compare]
+                print (type(closePrice))
+                print (closePrice)
+                print (type(high_price))
+                print (high_price)
+                print (type(low_price))
+                print (low_price)
+                if closePrice is None:
+                    closePrice = 0
+                if high_price is None:
+                    high_price = 0
+                if low_price is None:
+                    low_price = 0
+                closing_prices.append(closePrice)
                 price_range = float(high_price - closePrice)
                 price_ranges.append(price_range)
                 first_time_round_loop = False
@@ -355,9 +378,21 @@ for times_round_loop in range(1, 9999):
                 prev_close = closing_prices[-1]
                 ###############################
                 closePrice = i['closePrice'][price_compare]
-                closing_prices.append(closePrice)
                 high_price = i['highPrice'][price_compare]
                 low_price = i['lowPrice'][price_compare]
+                print (type(closePrice))
+                print (closePrice)
+                print (type(high_price))
+                print (high_price)
+                print (type(low_price))
+                print (low_price)
+                if closePrice is None:
+                    closePrice = 0
+                if high_price is None:
+                    high_price = 0
+                if low_price is None:
+                    low_price = 0
+                closing_prices.append(closePrice)
                 price_range = float(high_price - closePrice)
                 price_ranges.append(price_range)
                 TR = max(high_price-low_price, abs(high_price-prev_close), abs(low_price-prev_close))
@@ -518,7 +553,7 @@ for times_round_loop in range(1, 9999):
     
     if str(d['reason']) == "MARKET_CLOSED_WITH_EDITS":
         print ("Market Closed, Waiting Half an Hour")
-        systime.sleep(1800)
+        systime.sleep(30)
         continue
         
     previous_traded_epic_id = epic_id    
