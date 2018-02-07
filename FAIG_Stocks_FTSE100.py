@@ -29,16 +29,16 @@ price_compare = "bid"
 # QUAND_REF = "LSE/LLOY"
 # QUAND_REF = "LSE/BARC"
 
-quandl.ApiConfig.api_key = "*****************"
+quandl.ApiConfig.api_key = "**************"
 #MORE INFORMATION HERE:
 #http://help.quandl.com/article/320-where-can-i-find-my-api-key
 
 ########################################################################################################################
 REAL_OR_NO_REAL = 'https://demo-api.ig.com/gateway/deal'
 API_ENDPOINT = "https://demo-api.ig.com/gateway/deal/session"
-API_KEY = '*****************' 
-#API_KEY = '*****************'
-data = {"identifier":"*****************","password": "*****************"}
+API_KEY = '**************' 
+#API_KEY = '**************'
+data = {"identifier":"**************","password": "**************"}
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -48,8 +48,8 @@ data = {"identifier":"*****************","password": "*****************"}
 ########################################################################################################################
 # REAL_OR_NO_REAL = 'https://api.ig.com/gateway/deal'
 # API_ENDPOINT = "https://api.ig.com/gateway/deal/session"
-# API_KEY = '*****************'
-# data = {"identifier":"*****************","password": "*****************"}
+# API_KEY = '**************'
+# data = {"identifier":"**************","password": "**************"}
 
 headers = {'Content-Type':'application/json; charset=utf-8',
         'Accept':'application/json; charset=utf-8',
@@ -317,11 +317,11 @@ for times_round_loop in range(1, 9999):
         auth_r = requests.get(base_url, headers=authenticated_headers)
         d = json.loads(auth_r.text)
         
-        print ("-----------------DEBUG-----------------")
-        print(auth_r.status_code)
-        print(auth_r.reason)
-        print (auth_r.text)
-        print ("-----------------DEBUG-----------------")
+        # print ("-----------------DEBUG-----------------")
+        # print(auth_r.status_code)
+        # print(auth_r.reason)
+        # print (auth_r.text)
+        # print ("-----------------DEBUG-----------------")
         
         for i in d['prices']:
             tmp_list = []
@@ -358,12 +358,12 @@ for times_round_loop in range(1, 9999):
                 closePrice = i['closePrice'][price_compare]
                 high_price = i['highPrice'][price_compare]
                 low_price = i['lowPrice'][price_compare]
-                print (type(closePrice))
-                print (closePrice)
-                print (type(high_price))
-                print (high_price)
-                print (type(low_price))
-                print (low_price)
+                # print (type(closePrice))
+                # print (closePrice)
+                # print (type(high_price))
+                # print (high_price)
+                # print (type(low_price))
+                # print (low_price)
                 if closePrice is None:
                     closePrice = 0
                 if high_price is None:
@@ -380,12 +380,12 @@ for times_round_loop in range(1, 9999):
                 closePrice = i['closePrice'][price_compare]
                 high_price = i['highPrice'][price_compare]
                 low_price = i['lowPrice'][price_compare]
-                print (type(closePrice))
-                print (closePrice)
-                print (type(high_price))
-                print (high_price)
-                print (type(low_price))
-                print (low_price)
+                # print (type(closePrice))
+                # print (closePrice)
+                # print (type(high_price))
+                # print (high_price)
+                # print (type(low_price))
+                # print (low_price)
                 if closePrice is None:
                     closePrice = 0
                 if high_price is None:
@@ -507,7 +507,7 @@ for times_round_loop in range(1, 9999):
     #Hacky af due to low value produced. 
     #Hacky af due to low value produced. 
     #Hacky af due to low value produced. 
-    stopDistance_value = "20"
+    stopDistance_value = "10"
     #Hacky af due to low value produced. 
     #Hacky af due to low value produced. 
     #Hacky af due to low value produced. 
