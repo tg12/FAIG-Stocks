@@ -29,16 +29,16 @@ price_compare = "bid"
 # QUAND_REF = "LSE/LLOY"
 # QUAND_REF = "LSE/BARC"
 
-quandl.ApiConfig.api_key = "************"
+quandl.ApiConfig.api_key = "*********"
 #MORE INFORMATION HERE:
 #http://help.quandl.com/article/320-where-can-i-find-my-api-key
 
 ########################################################################################################################
 REAL_OR_NO_REAL = 'https://demo-api.ig.com/gateway/deal'
 API_ENDPOINT = "https://demo-api.ig.com/gateway/deal/session"
-API_KEY = '************' 
-#API_KEY = '************'
-data = {"identifier":"************","password": "************"}
+#API_KEY = '*********' 
+API_KEY = '*********'
+data = {"identifier":"*********","password": "*********"}
 ########################################################################################################################
 ########################################################################################################################
 ########################################################################################################################
@@ -48,9 +48,9 @@ data = {"identifier":"************","password": "************"}
 ########################################################################################################################
 # REAL_OR_NO_REAL = 'https://api.ig.com/gateway/deal'
 # API_ENDPOINT = "https://api.ig.com/gateway/deal/session"
-# API_KEY = '************' <----Use this one for ************
-# API_KEY = '************' <----Use this one for ************
-# data = {"identifier":"************","password": "************"}
+# API_KEY = '*********' <----Use this one for *********
+# API_KEY = '*********' <----Use this one for *********
+# data = {"identifier":"*********","password": "*********"}
 
 headers = {'Content-Type':'application/json; charset=utf-8',
         'Accept':'application/json; charset=utf-8',
@@ -485,18 +485,18 @@ for times_round_loop in range(1, 9999):
         
         #Three things, Price difference is less than target, Accuracy is OK, Current Price is less than Price Prediction
         if price_diff < 0 and score > predict_accuracy and float(current_price) < float(price_prediction):
-             DIRECTION_TO_TRADE = "BUY"
-             DIRECTION_TO_CLOSE = "SELL"
-             DIRECTION_TO_COMPARE = 'bid'
-             DO_A_THING = True
+            DIRECTION_TO_TRADE = "BUY"
+            DIRECTION_TO_CLOSE = "SELL"
+            DIRECTION_TO_COMPARE = 'bid'
+            DO_A_THING = True
         elif float(price_diff) > float(limitDistance_value) and score > predict_accuracy and float(current_price) > float(price_prediction):
             #!!!!Above Predicted Target!!!!
             #Tight limit (Take Profit)
-            limitDistance_value = "2"
             DIRECTION_TO_TRADE = "SELL"
             DIRECTION_TO_CLOSE = "BUY"
             DIRECTION_TO_COMPARE = 'offer'
             DO_A_THING = True
+            limitDistance_value = "2" 
         else:
             DO_A_THING = False
             print ("!!DEBUG!! NO CRITERIA!!: " + str(datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f%Z")))
